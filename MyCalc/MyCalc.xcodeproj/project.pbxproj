@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DBCCFCE61FFBE2A800755FA6 /* PercentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCCFCE51FFBE2A800755FA6 /* PercentViewController.swift */; };
+		DBCCFCE81FFBE61700755FA6 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCCFCE71FFBE61700755FA6 /* ResultViewController.swift */; };
 		DBCF69A91FFB413E00D3BB71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCF69A81FFB413E00D3BB71 /* AppDelegate.swift */; };
 		DBCF69AB1FFB413E00D3BB71 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCF69AA1FFB413E00D3BB71 /* ViewController.swift */; };
 		DBCF69AE1FFB413E00D3BB71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBCF69AC1FFB413E00D3BB71 /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DBCCFCE51FFBE2A800755FA6 /* PercentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentViewController.swift; sourceTree = "<group>"; };
+		DBCCFCE71FFBE61700755FA6 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		DBCF69A51FFB413E00D3BB71 /* MyCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBCF69A81FFB413E00D3BB71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBCF69AA1FFB413E00D3BB71 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +60,8 @@
 			children = (
 				DBCF69A81FFB413E00D3BB71 /* AppDelegate.swift */,
 				DBCF69AA1FFB413E00D3BB71 /* ViewController.swift */,
+				DBCCFCE51FFBE2A800755FA6 /* PercentViewController.swift */,
+				DBCCFCE71FFBE61700755FA6 /* ResultViewController.swift */,
 				DBCF69AC1FFB413E00D3BB71 /* Main.storyboard */,
 				DBCF69AF1FFB413E00D3BB71 /* Assets.xcassets */,
 				DBCF69B11FFB413E00D3BB71 /* LaunchScreen.storyboard */,
@@ -138,6 +144,8 @@
 			files = (
 				DBCF69AB1FFB413E00D3BB71 /* ViewController.swift in Sources */,
 				DBCF69A91FFB413E00D3BB71 /* AppDelegate.swift in Sources */,
+				DBCCFCE61FFBE2A800755FA6 /* PercentViewController.swift in Sources */,
+				DBCCFCE81FFBE61700755FA6 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

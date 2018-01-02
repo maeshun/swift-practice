@@ -22,6 +22,24 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: - Navigation
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // 次の画面を取得
+        let viewController = segue.destination as! PercentViewController
+        
+        if let price = Int(priceField.text!) {
+            // 数値に変換した金額を次の画面に設定する
+            viewController.price = price
+        }
+    }
+    
+    
+    // 結果画面からもどって来たときの処理
+    @IBAction func restart(_ segue: UIStoryboardSegue) {
+        priceField.text = "0"
+    }
+
     @IBAction func tap1Button(_ sender: Any) {
         setNumber("1")
     }
