@@ -22,6 +22,60 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func tap1Button(_ sender: Any) {
+        setNumber("1")
+    }
 
+    @IBAction func tap2Button(_ sender: Any) {
+        setNumber("2")
+    }
+    
+    @IBAction func tap3Button(_ sender: Any) {
+        setNumber("3")
+    }
+
+    @IBAction func tap4Button(_ sender: Any) {
+        setNumber("4")
+    }
+    
+    @IBAction func tap5Button(_ sender: Any) {
+        setNumber("5")
+    }
+    
+    @IBAction func tap6Button(_ sender: Any) {
+        setNumber("6")
+    }
+    
+    @IBAction func tap7Button(_ sender: Any) {
+        setNumber("7")
+    }
+    
+    @IBAction func tap8Button(_ sender: Any) {
+        setNumber("8")
+    }
+    
+    @IBAction func tap9Button(_ sender: Any) {
+        setNumber("9")
+    }
+    
+    @IBAction func tap0Button(_ sender: Any) {
+        setNumber("0")
+    }
+    
+    @IBAction func tap00Button(_ sender: Any) {
+        setNumber("00")
+    }
+    
+    @IBAction func tapCButton(_ sender: Any) {
+        priceField.text = "0";
+    }
+    
+    private func setNumber(_ num: String) {
+        let value = priceField.text! + num
+        if let price = Int(value) {
+            priceField.text = "\(price)"
+        }
+    }
+    
 }
 
