@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var todoList = [String]()
+    var todoList = [MyTodo]()
     
     @IBOutlet weak var tableView: UITableView!
 
@@ -19,10 +19,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         // 保存しているToDoの読み込み処理
         let userDefaults = UserDefaults.standard
-        if let storedTodoList = userDefaults.array(forKey: "todoList") as? [String] {
-            todoList.append(contentsOf: storedTodoList)
+        if let storedToDoList = userDefaults.object(forKey: "todoList") as? Data {
+            if let unarchiveTodoList = NSKeyedUnarchiver.unarchiveObject(with: storedToDoList) as? [MyTodo] {
+                todoList.append(contentsOf: unarchiveTodoList)
+                print(todoList)
+            }
         }
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,14 +44,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             // OKボタンがタップされたときの処理
             if let textField = alertController.textFields?.first {
                 // ToDoの配列の先頭に入力値を挿入
-                self.todoList.insert(textField.text!, at: 0)
+                let myTodo = MyTodo()
+                myTodo.todoTitle = textField.text!
+                self.todoList.insert(myTodo, at: 0)
                 
                 // テーブルに行が追加されたことをテーブルに通知
                 self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: UITableViewRowAnimation.right)
                 
                 // ToDoの保存処理
                 let userDefaults = UserDefaults.standard
-                userDefaults.set(self.todoList, forKey: "todoList")
+                // Data型にシリアライズする
+                let data = NSKeyedArchiver.archivedData(withRootObject: self.todoList)
+                userDefaults.set(data, forKey: "todoList")
                 userDefaults.synchronize()
             }
         }
@@ -64,6 +70,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // アラートダイアログを表示
         present(alertController, animated: true, completion: nil)
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let myTodo = todoList[indexPath.row]
+        if myTodo.todoDone {
+            myTodo.todoDone = false
+        } else {
+            myTodo.todoDone = true
+        }
+        
+        // セルの状態を変更
+        tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.fade)
+        // データ保存
+        let data: Data = NSKeyedArchiver.archivedData(withRootObject: todoList)
+        // UserDefaultに保存
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(data, forKey: "todoList")
+        userDefaults.synchronize()
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return todoList.count
@@ -73,12 +98,43 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // StoryBoardで指定したtodoCell識別子を利用して再利用可能なセルを取得する
         let cell = tableView.dequeueReusableCell(withIdentifier: "todoCell", for: indexPath)
         
-        // 行番号に合ったToDoのタイトルを取得
-        let todoTitle = todoList[indexPath.row]
+        // 行番号に合ったToDoの情報を取得
+        let myTodo = todoList[indexPath.row]
         // セルのラベルにToDoのタイトルをセット
-        cell.textLabel?.text = todoTitle
+        cell.textLabel?.text = myTodo.todoTitle
+        // セルのチェックマーク状態をセット
+        if myTodo.todoDone {
+            // チェックあり
+            cell.accessoryType = UITableViewCellAccessoryType.checkmark
+        } else {
+            // チェックなし
+            cell.accessoryType = UITableViewCellAccessoryType.none
+        }
 
         return cell
     }
+}
+
+class MyTodo: NSObject, NSCoding {
+
+    // ToDoのタイトル
+    var todoTitle: String?
+    // 完了フラグ
+    var todoDone: Bool = false
+    
+    override init() {
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        todoTitle = aDecoder.decodeObject(forKey: "todoTitle") as? String
+        todoDone = aDecoder.decodeBool(forKey: "todoDone")
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(todoTitle, forKey: "todoTitle")
+        aCoder.encode(todoDone, forKey: "todoDone")
+    }
+    
 }
 
