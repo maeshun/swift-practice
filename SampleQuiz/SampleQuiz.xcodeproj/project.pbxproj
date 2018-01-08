@@ -12,6 +12,8 @@
 		DB3E4A542003679100B19EC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB3E4A522003679100B19EC5 /* Main.storyboard */; };
 		DB3E4A562003679100B19EC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB3E4A552003679100B19EC5 /* Assets.xcassets */; };
 		DB3E4A592003679100B19EC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB3E4A572003679100B19EC5 /* LaunchScreen.storyboard */; };
+		DB3E4A622003681300B19EC5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3E4A612003681300B19EC5 /* AudioToolbox.framework */; };
+		DB3E4A6420036A2F00B19EC5 /* custom.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DB3E4A6320036A2F00B19EC5 /* custom.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		DB3E4A552003679100B19EC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB3E4A582003679100B19EC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB3E4A5A2003679100B19EC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB3E4A612003681300B19EC5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		DB3E4A6320036A2F00B19EC5 /* custom.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = custom.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB3E4A622003681300B19EC5 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,7 @@
 			children = (
 				DB3E4A4D2003679100B19EC5 /* SampleQuiz */,
 				DB3E4A4C2003679100B19EC5 /* Products */,
+				DB3E4A602003681300B19EC5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +60,7 @@
 		DB3E4A4D2003679100B19EC5 /* SampleQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				DB3E4A6320036A2F00B19EC5 /* custom.mp3 */,
 				DB3E4A4E2003679100B19EC5 /* AppDelegate.swift */,
 				DB3E4A502003679100B19EC5 /* ViewController.swift */,
 				DB3E4A522003679100B19EC5 /* Main.storyboard */,
@@ -62,6 +69,14 @@
 				DB3E4A5A2003679100B19EC5 /* Info.plist */,
 			);
 			path = SampleQuiz;
+			sourceTree = "<group>";
+		};
+		DB3E4A602003681300B19EC5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DB3E4A612003681300B19EC5 /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +141,7 @@
 				DB3E4A592003679100B19EC5 /* LaunchScreen.storyboard in Resources */,
 				DB3E4A562003679100B19EC5 /* Assets.xcassets in Resources */,
 				DB3E4A542003679100B19EC5 /* Main.storyboard in Resources */,
+				DB3E4A6420036A2F00B19EC5 /* custom.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +293,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JF2WJV4NP5;
 				INFOPLIST_FILE = SampleQuiz/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cherry-burst.SampleQuiz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -292,6 +309,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JF2WJV4NP5;
 				INFOPLIST_FILE = SampleQuiz/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cherry-burst.SampleQuiz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
