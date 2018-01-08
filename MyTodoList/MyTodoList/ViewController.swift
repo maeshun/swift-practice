@@ -109,6 +109,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // セルが編集可能かどうかを返却する
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
