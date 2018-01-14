@@ -12,6 +12,7 @@
 		DB3E4ABE200BAA4E00B19EC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB3E4ABC200BAA4E00B19EC5 /* Main.storyboard */; };
 		DB3E4AC0200BAA4E00B19EC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB3E4ABF200BAA4E00B19EC5 /* Assets.xcassets */; };
 		DB3E4AC3200BAA4E00B19EC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB3E4AC1200BAA4E00B19EC5 /* LaunchScreen.storyboard */; };
+		DB3E4ACB200BB15D00B19EC5 /* ItemSearchResultSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3E4ACA200BB15D00B19EC5 /* ItemSearchResultSet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		DB3E4ABF200BAA4E00B19EC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB3E4AC2200BAA4E00B19EC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB3E4AC4200BAA4E00B19EC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB3E4ACA200BB15D00B19EC5 /* ItemSearchResultSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSearchResultSet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				DB3E4AB8200BAA4E00B19EC5 /* AppDelegate.swift */,
 				DB3E4ABA200BAA4E00B19EC5 /* ViewController.swift */,
+				DB3E4ACA200BB15D00B19EC5 /* ItemSearchResultSet.swift */,
 				DB3E4ABC200BAA4E00B19EC5 /* Main.storyboard */,
 				DB3E4ABF200BAA4E00B19EC5 /* Assets.xcassets */,
 				DB3E4AC1200BAA4E00B19EC5 /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB3E4ABB200BAA4E00B19EC5 /* ViewController.swift in Sources */,
+				DB3E4ACB200BB15D00B19EC5 /* ItemSearchResultSet.swift in Sources */,
 				DB3E4AB9200BAA4E00B19EC5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
