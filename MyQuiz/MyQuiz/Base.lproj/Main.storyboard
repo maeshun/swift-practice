@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Start View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="StartViewController" customModule="MyQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="117.39130434782609"/>
         </scene>
-        <!--View Controller-->
+        <!--Question View Controller-->
         <scene sceneID="jYh-uS-64x">
             <objects>
-                <viewController storyboardIdentifier="question" id="p2E-d2-xlF" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="question" id="p2E-d2-xlF" customClass="QuestionViewController" customModule="MyQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JIu-81-xhX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -86,6 +86,9 @@
                                         <state key="normal" title="恐竜の化石">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapAnswer1Button:" destination="p2E-d2-xlF" eventType="touchUpInside" id="VRq-yY-YIz"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gmk-0j-WAR">
                                         <rect key="frame" x="0.0" y="115" width="343" height="105"/>
@@ -95,6 +98,9 @@
                                         <state key="normal" title="スペースシャトル">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapAnswer2Button:" destination="p2E-d2-xlF" eventType="touchUpInside" id="iA6-h2-BnT"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="och-2w-pxB">
                                         <rect key="frame" x="0.0" y="230" width="343" height="105"/>
@@ -104,6 +110,9 @@
                                         <state key="normal" title="タイムマシン">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapAnswer3Button:" destination="p2E-d2-xlF" eventType="touchUpInside" id="z8U-dq-m2b"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsF-Qv-qFq">
                                         <rect key="frame" x="0.0" y="345" width="343" height="105"/>
@@ -113,14 +122,17 @@
                                         <state key="normal" title="無人島">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapAnswer4Button:" destination="p2E-d2-xlF" eventType="touchUpInside" id="9Qq-eY-OIz"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="correct" translatesAutoresizingMaskIntoConstraints="NO" id="2ga-bp-pNN">
-                                <rect key="frame" x="86.5" y="232" width="202" height="202"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="incorrect" translatesAutoresizingMaskIntoConstraints="NO" id="Dy2-4Q-OQa">
                                 <rect key="frame" x="87" y="233" width="201" height="201"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="correct" translatesAutoresizingMaskIntoConstraints="NO" id="2ga-bp-pNN">
+                                <rect key="frame" x="86" y="232" width="202" height="202"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -143,15 +155,25 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ivg-33-Seg"/>
                     </view>
+                    <connections>
+                        <outlet property="answer1Button" destination="6Om-1C-1EC" id="ue2-kv-yV4"/>
+                        <outlet property="answer2Button" destination="Gmk-0j-WAR" id="f0k-iS-WNz"/>
+                        <outlet property="answer3Button" destination="och-2w-pxB" id="k1x-Ex-UEd"/>
+                        <outlet property="answer4Button" destination="nsF-Qv-qFq" id="cRm-H9-FDJ"/>
+                        <outlet property="correctImageView" destination="2ga-bp-pNN" id="k0b-Br-ugb"/>
+                        <outlet property="incorrectImageView" destination="Dy2-4Q-OQa" id="5Si-Xc-J2i"/>
+                        <outlet property="questionNoLabel" destination="ivP-vf-6os" id="aCB-Ml-sjL"/>
+                        <outlet property="questionTextView" destination="i5G-kD-TyK" id="Mtt-xU-qcg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zb8-CW-Feh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="845.60000000000002" y="116.49175412293854"/>
         </scene>
-        <!--View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="mgL-q2-2Yt">
             <objects>
-                <viewController storyboardIdentifier="result" id="9O3-vS-lOJ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="result" id="9O3-vS-lOJ" customClass="ResultViewController" customModule="MyQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uKn-mO-uJp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -189,6 +211,9 @@
                                 <state key="normal" title="タイトルへ戻る">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="YlD-ha-sAV" kind="unwind" unwindAction="goToTitle:" id="DrE-1u-ZGT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -200,8 +225,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="slB-cP-ypv"/>
                     </view>
+                    <connections>
+                        <outlet property="correctPercentLabel" destination="j2x-OO-UOf" id="9w8-T8-V4D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qgi-il-xKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="YlD-ha-sAV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1592.8" y="116.49175412293854"/>
         </scene>
