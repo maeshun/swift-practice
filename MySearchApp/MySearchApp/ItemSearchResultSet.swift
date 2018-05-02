@@ -43,7 +43,7 @@ class Result: Codable {
     required init(from decoder: Decoder) throws {
         // デコードのためのコンテナを取得
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        // コンテナ内のキーを取得。キーが文字列であるため、数値の照準ソートも行う
+        // コンテナ内のキーを取得。キーが文字列であるため、数値の昇順ソートも行う
         let keys = container.allKeys.sorted {
             Int($0.rawValue)! < Int($1.rawValue)!
         }
@@ -118,7 +118,7 @@ class ItemData: Codable {
     // CodingKeyプロトコルを適用したCodingKeys列挙子
     private enum CodingKeys: String, CodingKey {
         case name = "Name"
-        case url = "URL"
+        case url = "Url"
         case imageInfo = "Image"
         case priceInfo = "Price"
     }
